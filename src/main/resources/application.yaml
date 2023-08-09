@@ -1,0 +1,26 @@
+server:
+  port: 8090
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/brain_home
+    username: postgres //Should be secured
+    password: ADMIN //Should be secured
+  flyway:
+    url: jdbc:postgresql://localhost:5432/brain_home
+    locations: classpath:db/migration
+    user: postgres //Should be secured
+    password: ADMIN //Should be secured
+
+
+jwt:
+  password:
+    encoder:
+      secret: someRandomSecret //Should be secured
+      iteration: 64
+      keylength: 256
+  secret: secretPhrase //Should be secured
+  expiration: 3600
+  issuer: sobo
+
+
